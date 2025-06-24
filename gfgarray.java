@@ -175,7 +175,7 @@ public class gfgarray {
         // for (int i=0;i<arr.length;i++){
         //     System.out.print(arr[i] + " ");
         // }
-        int arr [] = {2,4,1,7,5,0,9};
+        int arr [] = {2,4,1,7,5,0,};
         permutation(arr);
         for (int i=0;i<arr.length;i++){
              System.out.print(arr[i] + " ");
