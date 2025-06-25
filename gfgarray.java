@@ -1,9 +1,16 @@
-package practice;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class gfgarray {
+
+    public static void printArray(int arr[]){
+        for (int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+
     public static int missing(int arr[]){
         int n = arr.length+1;
         for(int i=1;i<n+1;i++){
@@ -156,6 +163,58 @@ public class gfgarray {
         return result;
     }
 
+    public static void pushZerosToEnd(int[] arr) {
+        
+        int n = arr.length;
+        int push = 0;
+        for(int i=0;i<n;i++){
+            if(arr[i]!=0){
+                int temp = arr[i];
+                arr[i]  = arr[push];
+                arr[push] = temp;
+                
+                push++;
+            }
+            
+        }
+    }
+    public static int maximumProfit(int prices[]) {         ///Multiple Transition
+        
+        int maxprofit = 0;
+        for(int i=1;i<prices.length;i++){
+            if(prices[i]>prices[i-1]){
+                maxprofit += prices[i]-prices[i-1];
+            }
+        }return maxprofit;
+    }
+
+    public static int maximumProfit2(int prices[]) {        ///Max one Transaction Allowed
+       
+        int min = prices[0];
+        int maxprofit =0;
+        for(int i=1;i<prices.length;i++){
+            min = Math.min(min,prices[i]);
+            maxprofit = Math.max(maxprofit,prices[i]-min);
+        }
+        return maxprofit;
+    }
+
+    public static int getMinDiff(int[] arr, int k) {
+        
+        Arrays.sort(arr);
+        int n = arr.length;
+        int diff = arr[n-1]-arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]-k<0){
+                continue;
+            }
+            int min = Math.min(arr[0]+k,arr[i]-k);
+            int max = Math.max(arr[i-1]+k,arr[n-1]-k);
+            diff = Math.min(diff,max-min);
+        }return diff;
+    }
+    
+
 
         
         
@@ -172,15 +231,25 @@ public class gfgarray {
         // int arr[] = {1,2,3,4,5};
         // int rotate = 2;
         // circularArr(arr, rotate);
-        // for (int i=0;i<arr.length;i++){
-        //     System.out.print(arr[i] + " ");
-        // }
-        int arr [] = {2,4,1,7,5,0,};
-        permutation(arr);
-        for (int i=0;i<arr.length;i++){
-             System.out.print(arr[i] + " ");
-        }
+        // printArray(arr);
+        
+        // int arr [] = {2,4,1,7,5,0,};
+        // permutation(arr);
+        // printArray(arr);
 
+        // int arr[] = {3,5,0,0,4};
+        // pushZerosToEnd(arr);
+        // printArray(arr);
+
+        // int arr[] = {100, 180, 260, 310, 40, 535, 695};
+        // System.out.println(maximumProfit(arr));
+        
+        // int arr[] = {7, 10, 1, 3, 6, 9, 2};
+        // System.out.println(maximumProfit2(arr));
+
+        int arr[] = {3, 9, 12, 16, 20};
+        int k = 3;
+        System.out.println(getMinDiff(arr,k));
 
     }
     
