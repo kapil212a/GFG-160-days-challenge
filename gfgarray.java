@@ -213,6 +213,42 @@ public class gfgarray {
             diff = Math.min(diff,max-min);
         }return diff;
     }
+
+    public static int maxSubarraySum(int[] arr) { ////Kadane's Algorithm
+        
+        int max = arr[0];
+        int sum =arr[0];
+        for(int i=1;i<arr.length;i++){
+            
+            max = Math.max(max+arr[i],arr[i]);
+            sum = Math.max(max,sum); 
+        }return sum;
+    }
+
+    public static int maxProduct(int[] arr) {
+        
+        int max = Integer.MIN_VALUE;
+        int leftToright = 1;
+        int rightToleft = 1;
+        int n = arr.length;
+        
+        for(int i=0;i<n;i++){
+            if(leftToright==0){
+                leftToright = 1;
+            }
+            if(rightToleft==0){
+                rightToleft = 1;
+            }
+            leftToright *=arr[i];
+            
+            int j = n-1-i;
+            rightToleft *=arr[j];
+            
+            max = Math.max(leftToright,Math.max(rightToleft,max));
+        }
+        return max;
+    }
+    
     
 
 
@@ -247,10 +283,16 @@ public class gfgarray {
         // int arr[] = {7, 10, 1, 3, 6, 9, 2};
         // System.out.println(maximumProfit2(arr));
 
-        int arr[] = {3, 9, 12, 16, 20};
-        int k = 3;
-        System.out.println(getMinDiff(arr,k));
+        // int arr[] = {3, 9, 12, 16, 20};
+        // int k = 3;
+        // System.out.println(getMinDiff(arr,k));
+
+        // int arr[] = {2, 3, -8, 7, -1, 2, 3};
+        // System.out.println(maxSubarraySum(arr));
+
+        int arr[] = {-2, 6, -3, -10, 0, 2};
+        System.out.println(maxProduct(arr));
 
     }
-    
+
 }
