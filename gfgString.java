@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class gfgString {
     public static int myAtoi(String s) {
         int res =0;
@@ -65,6 +67,16 @@ public class gfgString {
         }
         return result.reverse().toString();
     }
+
+    public static boolean areAnagrams(String s1, String s2) {
+        
+        char[] str1 = s1.toCharArray();
+        char[] str2 = s2.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+        
+        return Arrays.equals(str1,str2);
+    }
     
     public static void main(String args[]){
         // String s  = " -123";
@@ -74,5 +86,9 @@ public class gfgString {
         String s1 = "1101";
         String s2 = "111";
         System.out.println(addBinary(s1,s2));
+
+        String str = "heart";
+        String stri = "earth";
+        System.out.println(areAnagrams(str, stri));
     }
 }
