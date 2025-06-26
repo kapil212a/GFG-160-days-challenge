@@ -77,18 +77,46 @@ public class gfgString {
         
         return Arrays.equals(str1,str2);
     }
+
+    static int max = 26;
+    static char nonRepeatingChar(String s) {
+        
+        int arr[] = new int[max];
+        Arrays.fill(arr,-1);
+        for(int i=0;i<s.length();i++){
+            int index = s.charAt(i) - 'a';
+            if(arr[index] == -1){
+                arr[index] = i;
+            }
+            else{
+                arr[index] = -2;
+            }
+            
+        }
+        
+        int idx = -1;
+        for(int i = 0;i<max;i++){
+            if(arr[i]>=0 && (idx==-1 || arr[i]<arr[idx])){
+                idx = i;
+            }
+        }
+        return (idx==-1)?'$':s.charAt(arr[idx]);
+    }
     
     public static void main(String args[]){
         // String s  = " -123";
         // System.out.println(myAtoi(s));
         // System.err.println(s);
 
-        String s1 = "1101";
-        String s2 = "111";
-        System.out.println(addBinary(s1,s2));
+        // String s1 = "1101";
+        // String s2 = "111";
+        // System.out.println(addBinary(s1,s2));
 
-        String str = "heart";
-        String stri = "earth";
-        System.out.println(areAnagrams(str, stri));
+        // String str = "heart";
+        // String stri = "earth";
+        // System.out.println(areAnagrams(str, stri));
+
+        String s = "geeksforgeeks";
+        System.out.println(nonRepeatingChar(s));
     }
 }
