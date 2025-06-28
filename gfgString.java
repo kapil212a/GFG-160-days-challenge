@@ -102,6 +102,28 @@ public class gfgString {
         }
         return (idx==-1)?'$':s.charAt(arr[idx]);
     }
+
+    public static boolean isPalindrome(String s ,int i, int j){
+        while(j>=i){
+            if(s.charAt(i) != s.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    public static int minCharInPalindrome(String s){
+        
+        int count = 0;
+        int i=s.length()-1;
+        while(i>=0 && !isPalindrome(s,0,i)){
+            i--;
+            count++; 
+        }
+        return count;
+    }
+    
     
     public static void main(String args[]){
         // String s  = " -123";
@@ -116,7 +138,10 @@ public class gfgString {
         // String stri = "earth";
         // System.out.println(areAnagrams(str, stri));
 
-        String s = "geeksforgeeks";
-        System.out.println(nonRepeatingChar(s));
+        // String s = "geeksforgeeks";
+        // System.out.println(nonRepeatingChar(s));
+
+        String s = "aacbcaaaa";
+        System.out.println(minCharInPalindrome(s));
     }
 }
