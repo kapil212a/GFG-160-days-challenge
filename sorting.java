@@ -32,9 +32,36 @@ public class sorting{
         }
     }
 
+    public static int hIndex(int[] citations) {
+        
+        int n = citations.length;
+        int freq[] = new int [n+1];
+        
+        for(int i=0;i<n;i++){
+            if(citations[i]>=n){
+                freq[n] +=1;
+            }
+            else{
+                freq[citations[i]] +=1;
+            }
+        }
+        int idx = n;
+        int s = freq[n];
+        
+        while(s<idx){
+            idx--;
+            s += freq[idx];
+        }
+        return idx;
+        
+    }
+
     public static void main(String[] args) {
-        int arr[] ={0, 1, 2, 0, 1, 2};
-        sort012(arr);
-        printArr(arr);
+        // int arr[] ={0, 1, 2, 0, 1, 2};
+        // sort012(arr);
+        // printArr(arr);\
+
+        int citations[] = {5, 1, 2, 4, 1};
+        System.out.println(hIndex(citations));
     }
 }
