@@ -136,7 +136,6 @@ public class sorting{
     }
 
     static ArrayList<int[]> insertInterval(int[][] intervals, int[] newInterval) {
-        // code here
         
         ArrayList<int[]> res = new ArrayList<>();
         int i= 0;
@@ -164,6 +163,25 @@ public class sorting{
         return res;
     }
 
+    static int minRemoval(int intervals[][]) {
+        
+        Arrays.sort(intervals , (a,b)-> a[0]-b[0]);
+        
+        int end = intervals[0][1];
+        int count = 0;
+        for(int i=1;i<intervals.length;i++){
+            if(intervals[i][0]< end){
+                end = Math.min(intervals[i][1],end);
+                
+                count++;
+            }
+            else{
+                end = intervals[i][1];
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         // int arr[] ={0, 1, 2, 0, 1, 2};
         // sort012(arr);
@@ -181,11 +199,14 @@ public class sorting{
         //     System.out.println(interval[0] + " " + interval[1]);
         // }
 
-        int[][] intervals = {{1, 3}, {4, 5}, {6, 7}, {8, 10}};
-        int[] newInterval = {5, 6};
-        ArrayList<int[]> res = insertInterval(intervals, newInterval);
-        for (int[] interval : res) {
-            System.out.println(interval[0] + " " + interval[1]);
-        }
+        // int[][] intervals = {{1, 3}, {4, 5}, {6, 7}, {8, 10}};
+        // int[] newInterval = {5, 6};
+        // ArrayList<int[]> res = insertInterval(intervals, newInterval);
+        // for (int[] interval : res) {
+        //     System.out.println(interval[0] + " " + interval[1]);
+        // }
+
+        int intervals[][] = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+        System.out.println(minRemoval(intervals));
     }
 }
