@@ -182,6 +182,27 @@ public class sorting{
         return count;
     }
 
+    public static void mergeArrays(int a[], int b[]) {
+       
+        int i = a.length-1;
+        int j = 0;
+        
+        while(i>=0 && j<b.length){
+            if(a[i]<b[j]){
+                i--;
+            }
+            else{
+                int temp = a[i];
+                a[i] = b[j];
+                b[j] = temp;
+                i--;
+                j++;
+            }
+        }
+        Arrays.sort(a);
+        Arrays.sort(b);
+    }
+
     public static void main(String[] args) {
         // int arr[] ={0, 1, 2, 0, 1, 2};
         // sort012(arr);
@@ -206,7 +227,19 @@ public class sorting{
         //     System.out.println(interval[0] + " " + interval[1]);
         // }
 
-        int intervals[][] = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
-        System.out.println(minRemoval(intervals));
+        // int intervals[][] = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+        // System.out.println(minRemoval(intervals));~
+
+        int[] a = {1, 5, 9, 10, 15, 20};
+        int[] b = {2, 3, 8, 13};
+        mergeArrays(a, b);
+
+        for (int ele : a){
+            System.out.print(ele + " ");
+        }
+        System.out.println();
+        for (int ele : b){
+            System.out.print(ele + " ");
+        }
     }
 }
