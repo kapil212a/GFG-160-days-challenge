@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Searching {
     public static int countFreq(int[] arr, int target) {
         
@@ -94,6 +97,21 @@ public class Searching {
         }return -1;
     }
 
+    public static int kthElement(int a[], int b[], int k) {
+        
+        ArrayList<Integer> arr = new ArrayList<>();
+        
+        for(int i:a){
+            arr.add(i);
+        }
+        for(int j:b){
+            arr.add(j);
+        }
+        Collections.sort(arr);
+        return arr.get(k-1);
+        
+    }
+
     public static void main(String[] args) {
         // int arr[] = {1, 1, 2, 2, 2, 2, 3};
         // int target = 2;
@@ -110,8 +128,13 @@ public class Searching {
         // int key = 3;
         // System.out.println(search(arr, key));
 
-        int arr[] = {1, 2, 4, 5, 7, 8, 3};
-        System.out.println(peakElement(arr));
+        // int arr[] = {1, 2, 4, 5, 7, 8, 3};
+        // System.out.println(peakElement(arr));
+
+        int a[] = {2, 3, 6, 7, 9};
+        int b[] = {1, 4, 8, 10};
+        int k = 5;
+        System.out.println(kthElement(a, b, k));
 
     }
 }
