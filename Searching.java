@@ -28,8 +28,9 @@ public class Searching {
             }
         }
         return arr[start];
-        
     }
+
+
     public static int searchInSortedAndRot(int arr[],int key){   ////o(nlogn)
         int start = 0;
         int end = arr.length-1;
@@ -54,6 +55,17 @@ public class Searching {
         }return -1;
     }
 
+    public static int search(int[] arr, int key) {
+
+        for(int i = 0;i<arr.length;i++){
+            if(arr[i]==key){
+                return i;
+            }
+        }
+        return -1;
+        
+    }
+
     public static void main(String[] args) {
         // int arr[] = {1, 1, 2, 2, 2, 2, 3};
         // int target = 2;
@@ -62,8 +74,12 @@ public class Searching {
         // int arr[] = {5, 6, 1, 2, 3, 4};
         // System.out.println(findMin(arr));
 
-        int[] arr1 = {5, 6, 7, 8, 9, 10, 1, 2, 3};
-        int key1 = 3;
-        System.out.println(searchInSortedAndRot(arr1, key1));
+        // int[] arr1 = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+        // int key1 = 3;
+        // System.out.println(searchInSortedAndRot(arr1, key1));
+
+        int arr [] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+        int key = 3;
+        System.out.println(search(arr, key));
     }
 }
