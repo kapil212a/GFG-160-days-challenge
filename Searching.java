@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Searching {
@@ -112,6 +113,39 @@ public class Searching {
         
     }
 
+    public static boolean check(int stalls[],int k,int dist){
+        int count = 1;
+        int prev = stalls[0];
+        for(int i=1;i<stalls.length;i++){
+            if(stalls[i]-prev >=dist){
+                prev = stalls[i];
+                count++;
+            }
+        }
+        return (count>=k);
+    }
+    public static int aggressiveCows(int[] stalls, int k) {
+        
+        Arrays.sort(stalls);
+        
+        int res = 0;
+        int start = 1;
+        int end = stalls[stalls.length-1]-stalls[0];
+        
+        while(start<=end){
+            int mid = (start+end)/2;
+            
+            if(check(stalls,k,mid)){
+                res = mid;
+                start = mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return res;
+        
+    }
+
     public static void main(String[] args) {
         // int arr[] = {1, 1, 2, 2, 2, 2, 3};
         // int target = 2;
@@ -131,10 +165,14 @@ public class Searching {
         // int arr[] = {1, 2, 4, 5, 7, 8, 3};
         // System.out.println(peakElement(arr));
 
-        int a[] = {2, 3, 6, 7, 9};
-        int b[] = {1, 4, 8, 10};
-        int k = 5;
-        System.out.println(kthElement(a, b, k));
+        // int a[] = {2, 3, 6, 7, 9};
+        // int b[] = {1, 4, 8, 10};
+        // int k = 5;
+        // System.out.println(kthElement(a, b, k));
+        
+        int arr[] = {1, 2, 4, 8, 9};
+        int k = 3;
+        System.out.println(aggressiveCows(arr, k));
 
     }
 }
