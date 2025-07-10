@@ -41,7 +41,7 @@ public class matrix {
         return spy;
     }
 
-     public static void rotateMatrix(int[][] mat) {
+     public static void rotateMatrix(int[][] mat) {   ///90 degree rotation
         int n = mat.length;
         
         for(int i=0;i<n/2;i++){
@@ -53,6 +53,25 @@ public class matrix {
                 mat[n-1-j][i] = temp;
             }
         }
+    }
+
+    public static boolean matSearch(int mat[][], int x) {
+        // your code here
+        int row = 0;
+        int col = mat[0].length-1;
+        
+        while(row<mat.length && col>=0){
+            if(mat[row][col]==x){
+                return true;
+            }
+            else if(mat[row][col] > x){
+                col--;
+            }else{
+                row++;
+            }
+        }
+        return false;
+        
     }
     
     public static void main(String[] args) {
@@ -68,20 +87,27 @@ public class matrix {
         //     System.out.print(ele + " ");
         // }
 
-        int[][] mat = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
-            {13, 14, 15, 16}
-        };
+        // int[][] mat = {
+        //     {1, 2, 3, 4},
+        //     {5, 6, 7, 8},
+        //     {9, 10, 11, 12},
+        //     {13, 14, 15, 16}
+        // };
 
-        rotateMatrix(mat);
-        for (int i = 0;i<mat.length;i++) {
-            for (int j = 0;j<mat.length;j++) {
-                System.out.print(mat[i][j]+ " ");
-            }
-            System.out.println();
-        }
+        // rotateMatrix(mat);
+        // for (int i = 0;i<mat.length;i++) {
+        //     for (int j = 0;j<mat.length;j++) {
+        //         System.out.print(mat[i][j]+ " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        int mat[][] = {{3, 30, 38},
+                       {20, 52, 54},
+                       {35, 60, 69}
+                    };
+                    int k = 60;
+                    System.out.println(matSearch(mat, k));
     }
     
 }
