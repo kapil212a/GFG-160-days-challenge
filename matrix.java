@@ -73,6 +73,29 @@ public class matrix {
         return false;
         
     }
+
+     public static boolean searchRowMatrix(int[][] mat, int x) {
+        int n = mat.length;
+        int m = mat[0].length;
+        
+        for(int i =0;i<n;i++){
+            int low = 0;
+            int hi = m-1;
+            
+            while(low<=hi){
+                int mid = (low+hi)/2;
+                if(mat[i][mid] == x){
+                    return true;
+                }
+                else if(mat[i][mid] > x){
+                    hi = mid-1;
+                }else{
+                    low = mid +1;
+                }
+            }
+        }
+        return false;
+    }
     
     public static void main(String[] args) {
         // int[][] mat = {
@@ -102,12 +125,19 @@ public class matrix {
         //     System.out.println();
         // }
 
-        int mat[][] = {{3, 30, 38},
-                       {20, 52, 54},
-                       {35, 60, 69}
-                    };
-                    int k = 60;
-                    System.out.println(matSearch(mat, k));
-    }
+        // int mat[][] = {{3, 30, 38},
+        //                {20, 52, 54},
+        //                {35, 60, 69}
+        //             };
+        //             int k = 60;
+        // System.out.println(matSearch(mat, k));
+
+        int mat[][] = {{3, 4, 9},
+                        {2, 5, 6},
+                        {9, 25, 27}};
+                        int x = 9;
+        System.out.println(searchRowMatrix(mat,x));
+                    
+        }
     
 }
