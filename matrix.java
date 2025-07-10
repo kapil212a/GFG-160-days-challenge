@@ -96,6 +96,41 @@ public class matrix {
         }
         return false;
     }
+
+    public static boolean searchMatrix(int[][] mat, int x) {
+        // code here
+        int n = mat.length;
+        int m = mat[0].length;
+        int lo = 0;
+        int hi = m*n-1;
+        while(lo<=hi){
+            int mid = (lo+hi)/2;
+            
+            int row = mid/m;
+            int col = mid%m;
+            
+            if(mat[row][col]==x){
+                return true;
+            }
+            else if(mat[row][col] > x){
+                hi = mid-1;
+            }
+            else{
+                lo = mid + 1;
+            }
+        }
+        return false;
+        //     int n = mat.length;
+        //     int m = mat[0].length;
+        //     for(int i=0;i<n;i++){
+        //         for(int j =0;j<m;j++){
+        //             if(mat[i][j] == x){
+        //                 return true;
+        //             }
+        //         }
+        //     }
+        //     return false;
+    }
     
     public static void main(String[] args) {
         // int[][] mat = {
@@ -132,12 +167,18 @@ public class matrix {
         //             int k = 60;
         // System.out.println(matSearch(mat, k));
 
-        int mat[][] = {{3, 4, 9},
-                        {2, 5, 6},
-                        {9, 25, 27}};
-                        int x = 9;
-        System.out.println(searchRowMatrix(mat,x));
+        // int mat[][] = {{3, 4, 9},
+        //                 {2, 5, 6},
+        //                 {9, 25, 27}};
+        //                 int x = 9;
+        // System.out.println(searchRowMatrix(mat,x));
                     
-        }
+        int mat[][] = {{1, 5, 9}, 
+                       {14, 20, 21}, 
+                       {30, 34, 43}};
+                       int x = 14;
+                       System.out.println(searchMatrix(mat, x));
+
+    }
     
 }
