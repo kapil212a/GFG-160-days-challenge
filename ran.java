@@ -7,9 +7,9 @@ public class ran{
         System.out.println(b);
     }
 
-    public static int reversenum(int num){
+    public static int reversnum(int num){
         int rev = 0;
-        while(num>=0){
+        while(num>0){
             int last = num%10;
             rev  = rev * 10 + last;
             num  = num/10;
@@ -20,7 +20,7 @@ public class ran{
         // int a =10;
         // int b = 9;
         // reverse(a, b);
-        int num = 12345;
-        System.out.print(reversenum(num));
+        int num = 12356789;
+        System.out.println(reversnum(num));
     }
 }
