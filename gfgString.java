@@ -135,7 +135,7 @@ public class gfgString {
         }
     }
 
-    
+    public static void 
     
     
     public static void main(String args[]){
