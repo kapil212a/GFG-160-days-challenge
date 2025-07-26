@@ -123,6 +123,19 @@ public class gfgString {
         }
         return count;
     }
+    public static void fab(int num){
+        int first = 0;
+        int second = 1;
+        int next;
+        for(int i=0;i<num;i++){
+            System.out.print(first +" ");
+            next = first + second;
+            first = second;
+            second = next;
+        }
+    }
+
+    
     
     
     public static void main(String args[]){
@@ -143,5 +156,8 @@ public class gfgString {
 
         String s = "aacbcaaaa";
         System.out.println(minCharInPalindrome(s));
+
+        int num = 10;
+        fab(num);
     }
 }
