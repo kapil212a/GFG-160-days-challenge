@@ -134,8 +134,6 @@ public class gfgString {
             second = next;
         }
     }
-
-    public static void 
     
     
     public static void main(String args[]){
