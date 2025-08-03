@@ -287,11 +287,11 @@ public class gfgarray {
         // int k = 3;
         // System.out.println(getMinDiff(arr,k));
 
-        // int arr[] = {2, 3, -8, 7, -1, 2, 3};
-        // System.out.println(maxSubarraySum(arr));
+        int arr[] = {2, 3, -8, 7, -1, 2, 3};
+         System.out.println(maxSubarraySum(arr));
 
-        int arr[] = {-2, 6, -3, -10, 0, 2};
-        System.out.println(maxProduct(arr));
+        // int arr[] = {-2, 6, -3, -10, 0, 2};
+        // System.out.println(maxProduct(arr));
 
         
 
