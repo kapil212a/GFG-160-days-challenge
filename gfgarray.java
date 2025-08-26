@@ -249,11 +249,7 @@ public class gfgarray {
         return max;
     }
     
-    
-
-
-        
-        
+       
     public static void main(String[] args) {
         // int arr [] = {1,2,3,4,5,7};
         // System.out.println(missingArr(arr));
@@ -293,9 +289,6 @@ public class gfgarray {
         // int arr[] = {-2, 6, -3, -10, 0, 2};
         // System.out.println(maxProduct(arr));
         System.out.println("hello");
-
-        
-
     }
 
 }
