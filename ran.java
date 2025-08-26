@@ -22,7 +22,5 @@ public class ran{
         // reverse(a, b);
         int num = 12356789;
         System.out.println(reversnum(num));
-
-        System.out.println("this is my linux vs");
     }
 }
