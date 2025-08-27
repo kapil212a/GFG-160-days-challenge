@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -57,6 +58,25 @@ public class hash {
         return ans;
     }
 
+    public static ArrayList<Integer> intersect(int[] a, int[] b) {
+        
+        HashSet<Integer> sa = new HashSet<>();
+        for(int num:a){
+            sa.add(num);
+        }
+        ArrayList<Integer> ans = new ArrayList<>();
+        
+        for(int num : b){
+            if(sa.contains(num)){
+                ans.add(num);
+                sa.remove(num);
+            }
+        }
+        return ans;
+        
+    }
+
+
     public static void main(String[] args) {
         int arr[] = {0, -1, 2, -3, 1};
         int target = -2;
@@ -68,6 +88,10 @@ public class hash {
 
         int arr2[] = {0, -1, 2, -3, 1};
         System.out.println(findTriplets(arr2));
+
+        int arr3[] = {1, 2, 1, 3, 1};
+        int arr4[] = {3, 1, 3, 4, 1};
+        System.out.println(intersect(arr3, arr4));
 
     }
 }
