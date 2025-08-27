@@ -76,6 +76,28 @@ public class hash {
         
     }
 
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+        
+        HashSet<Integer> sa = new HashSet<>();
+        
+        for(int add : a){
+            sa.add(add);
+        }
+        
+        for(int add2 : b){
+            sa.add(add2);
+        }
+        
+        ArrayList<Integer> ans = new ArrayList<>();
+        
+        for(int add3 : sa){
+            ans.add(add3);
+        }
+        
+        return ans;
+    }
+
+
 
     public static void main(String[] args) {
         int arr[] = {0, -1, 2, -3, 1};
@@ -92,6 +114,10 @@ public class hash {
         int arr3[] = {1, 2, 1, 3, 1};
         int arr4[] = {3, 1, 3, 4, 1};
         System.out.println(intersect(arr3, arr4));
+
+        int arr5[] = {1, 2, 3, 2, 1};
+        int arr6[] = {3, 2, 2, 3, 3, 2};
+        System.out.println(findUnion(arr5, arr6));
 
     }
 }
