@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class hash {
      public static boolean twoSum(int arr[], int target) {
@@ -97,6 +98,28 @@ public class hash {
         return ans;
     }
 
+    public static int longestConsecutive(int[] arr) {
+
+        Set<Integer> st = new HashSet<>();
+        int res = 0;
+        for(int val : arr){
+            st.add(val);
+        }
+        for(int val1 : arr){
+            if(st.contains(val1) && !st.contains(val1-1)){
+                int curr = val1 , cnt = 0;
+                while(st.contains(curr)){
+                    st.remove(curr);
+                    curr++;
+                    cnt++;
+                }
+                
+                res = Math.max(res , cnt);
+            }
+        }
+        return res;
+    }
+
 
 
     public static void main(String[] args) {
@@ -118,6 +141,9 @@ public class hash {
         int arr5[] = {1, 2, 3, 2, 1};
         int arr6[] = {3, 2, 2, 3, 3, 2};
         System.out.println(findUnion(arr5, arr6));
+
+        int arr7[] = {2, 6, 1, 9, 4, 5, 3};
+        System.out.println(longestConsecutive(arr7));
 
     }
 }
