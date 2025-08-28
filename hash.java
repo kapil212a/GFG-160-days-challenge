@@ -120,6 +120,26 @@ public class hash {
         return res;
     }
 
+    public static int cntSubarrays(int[] arr, int k) {
+       Map<Integer , Integer> mp = new HashMap<>();
+       int n = arr.length;
+       int sum = 0;
+       int res = 0;
+       
+        for(int i =0;i<n;i++){
+           sum += arr[i];
+           
+           if(sum == k){
+               res++;
+           }
+           if(mp.containsKey(sum-k)){
+               res += mp.get(sum - k);
+           }
+           mp.put(sum ,mp.getOrDefault(sum ,0) + 1);
+        }
+        return res;
+    }
+
 
 
     public static void main(String[] args) {
@@ -144,6 +164,9 @@ public class hash {
 
         int arr7[] = {2, 6, 1, 9, 4, 5, 3};
         System.out.println(longestConsecutive(arr7));
+
+        int arr8[] = {10, 2, -2, -20, 10};
+        System.out.println(cntSubarrays(arr8, -10));
 
     }
 }
