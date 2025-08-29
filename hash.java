@@ -140,6 +140,29 @@ public class hash {
         return res;
     }
 
+    public static long subarrayXor(int arr[], int k) {
+        
+        int res = 0;
+        
+        Map<Integer , Integer> mp = new HashMap<>();
+        int xor = 0;
+            
+        
+        for(int val : arr){
+            xor ^= val;
+            
+            res += mp.getOrDefault(xor ^k,0);
+            
+            if(xor == k){
+                res++;
+            }
+            mp.put(xor , mp.getOrDefault(xor ,0 )+1);
+        
+            
+        }
+        return res;
+    }
+
 
 
     public static void main(String[] args) {
@@ -167,6 +190,11 @@ public class hash {
 
         int arr8[] = {10, 2, -2, -20, 10};
         System.out.println(cntSubarrays(arr8, -10));
+
+        int arr9[] = {4, 2, 2, 6, 4};
+        int k = 6;
+        System.out.println(subarrayXor(arr9, k));
+        
 
     }
 }
