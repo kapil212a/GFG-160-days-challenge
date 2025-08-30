@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Twopointer {
@@ -66,6 +67,37 @@ public class Twopointer {
         return count;
     }
 
+    public  static ArrayList<Integer> sumClosest(int[] arr, int target) {
+        // code here
+        int n = arr.length;
+        Arrays.sort(arr);
+        int left = 0;
+        int right = n-1;
+        ArrayList<Integer> ls = new ArrayList<>();
+        int min = Integer.MAX_VALUE;
+        
+        while(left<right){
+            int sum = arr[left] + arr[right];
+            int abslt = Math.abs(target -sum);
+            
+            if(abslt < min){
+                min = abslt;
+                ls = new ArrayList<>(Arrays.asList(arr[left] , arr[right]));
+                
+            }
+            else if(sum == target){
+                return new ArrayList<>(Arrays.asList(arr[left] , arr[right]));
+            }
+            else if(sum <target){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return ls;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -75,5 +107,8 @@ public class Twopointer {
         int target1 = 5;
         System.out.println(countPairs(arr1, target1));
 
+        int arr2[] = {5, 2, 7, 1, 4};
+        target = 10;
+        System.out.println(sumClosest(arr2, target1));
     }
 }
