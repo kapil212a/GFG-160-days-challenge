@@ -98,6 +98,46 @@ public class Twopointer {
         return ls;
     }
 
+    public static int countPairs2(int arr[], int target) {
+        
+        Arrays.sort(arr);
+        int n = arr.length;
+        int res  = 0;
+        int left = 0;
+        int right = n-1;
+        
+        
+        while(left < right){
+            int sum = arr[left] + arr[right];
+            if(sum > target){
+                right--;
+            }
+            else if(sum < target){
+                left++;
+            }
+            else{
+                int ele1 = arr[left] , ele2 = arr[right];
+                int cnt1 = 0 , cnt2 = 0;
+                
+                while(left <= right && arr[left] == ele1){
+                    left++;
+                    cnt1++;
+                }
+                while(left <=right && arr[right] == ele2){
+                    right--;
+                    cnt2++;
+                }
+                if(ele1 == ele2){
+                    res += (cnt1 * (cnt1 -1))/2;
+                }
+                else{
+                    res += (cnt1*cnt2);
+                }
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -108,7 +148,11 @@ public class Twopointer {
         System.out.println(countPairs(arr1, target1));
 
         int arr2[] = {5, 2, 7, 1, 4};
-        target = 10;
-        System.out.println(sumClosest(arr2, target1));
+        int target2 = 10;
+        System.out.println(sumClosest(arr2, target2));
+
+        int arr3[] = {-1, 1, 5, 5, 7};
+        int target3 = 6;
+        System.out.println(countPairs2(arr3, target3));
     }
 }
