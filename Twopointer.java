@@ -46,9 +46,34 @@ public class Twopointer {
         
     }
 
+    public static int countPairs(int arr[], int target) {
+        
+        Arrays.sort(arr);
+        int n = arr.length;
+        int count =0;
+        int left = 0;
+        int right = n-1;
+        while(left < right){
+            int sum = arr[left] + arr[right];
+            if(sum < target){
+                count += right - left;
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
         System.out.println(countTriplets(arr, target));
+
+        int arr1[] = {5, 2, 3, 2, 4, 1};
+        int target1 = 5;
+        System.out.println(countPairs(arr1, target1));
+
     }
 }
