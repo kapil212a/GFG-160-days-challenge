@@ -158,6 +158,34 @@ public class Twopointer {
         return res;
     }
 
+     public static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        
+        ArrayList <Integer> ans = new ArrayList<>();
+        
+        int s = 0 ,e = 0;
+        int curr = 0;
+        
+        for(int i = 0; i<arr.length; i++){
+            curr += arr[i];
+        
+            if(curr >= target){
+                e = i;
+            
+                while(curr > target && s < e){
+                    curr -= arr[s];
+                    ++s;
+                }
+                if(curr == target){
+                    ans.add(s+1);
+                    ans.add(e+1);
+                    return ans;
+                }
+            }
+        }
+        ans.add(-1);
+        return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -177,5 +205,9 @@ public class Twopointer {
 
         int arr4[] = {10, 21, 22, 100, 101, 200, 300};
         System.out.println(countTriangles(arr4));
+
+        int arr5[] = {1, 2, 3, 7, 5};
+        int target4 = 12;
+        System.out.println(subarraySum(arr5, target4));
     }
 }
