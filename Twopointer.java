@@ -138,6 +138,26 @@ public class Twopointer {
         return res;
     }
 
+    public static int countTriangles(int arr[]) {
+        
+        int res = 0;
+        Arrays.sort(arr);
+        
+        for(int i = 0; i<arr.length;i++){
+            int left = 0 , right = i-1;
+            
+            while(left < right){
+                if(arr[left] + arr[right] >arr[i]){
+                    res += right-left;
+                    right--;
+                }else{
+                    left++;
+                }
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -154,5 +174,8 @@ public class Twopointer {
         int arr3[] = {-1, 1, 5, 5, 7};
         int target3 = 6;
         System.out.println(countPairs2(arr3, target3));
+
+        int arr4[] = {10, 21, 22, 100, 101, 200, 300};
+        System.out.println(countTriangles(arr4));
     }
 }
