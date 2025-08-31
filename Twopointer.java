@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class Twopointer {
     public static int countTriplets(int[] arr, int target) {
@@ -186,6 +187,23 @@ public class Twopointer {
         return ans;
     }
 
+    public static ArrayList<Integer> countDistinct(int arr[], int k) {
+
+        int n = arr.length;
+        ArrayList <Integer> ans = new ArrayList<>();
+        
+        for(int i = 0; i<=n-k; i++){
+            HashSet<Integer> hs = new HashSet<>();
+            
+            for(int j = i; j<i+k;j++){
+                hs.add(arr[j]);
+                
+            }
+            ans.add(hs.size());
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -209,5 +227,9 @@ public class Twopointer {
         int arr5[] = {1, 2, 3, 7, 5};
         int target4 = 12;
         System.out.println(subarraySum(arr5, target4));
+
+        int arr6[] = {1, 2, 1, 3, 4, 2, 3};
+        int k = 4;
+        System.out.println(countDistinct(arr6, k));
     }
 }
