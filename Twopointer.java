@@ -204,6 +204,28 @@ public class Twopointer {
         return ans;
     }
 
+    public static int longestUniqueSubstr(String s) {
+        
+        int n = s.length();
+        int ans = 0;
+        
+        int arr[] = new int[26];
+        for(int i=0; i<26; i++){
+            arr[i] = -1;
+        }
+        
+        int start = 0;
+        
+        for(int j = 0; j<n; j++){
+             start = Math.max(start , arr[s.charAt(j) - 'a'] +1);
+             
+             ans = Math.max(ans , j-start + 1);
+             
+             arr[s.charAt(j) - 'a'] = j;
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -231,5 +253,9 @@ public class Twopointer {
         int arr6[] = {1, 2, 1, 3, 4, 2, 3};
         int k = 4;
         System.out.println(countDistinct(arr6, k));
+
+        String s = "geeksforgeeks";
+        System.out.println(longestUniqueSubstr(`));
+
     }
 }
