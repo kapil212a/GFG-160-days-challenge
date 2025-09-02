@@ -255,7 +255,7 @@ public class Twopointer {
         System.out.println(countDistinct(arr6, k));
 
         String s = "geeksforgeeks";
-        System.out.println(longestUniqueSubstr(`));
+        System.out.println(longestUniqueSubstr(s));
 
     }
 }
