@@ -226,6 +226,31 @@ public class Twopointer {
         return ans;
     }
 
+    public static int maxWater(int arr[]) {
+        // code here
+        int n = arr.length;
+        int left[] = new int[n];
+        int right[] = new int[n];
+        int ans = 0;
+        
+        left[0] = arr[0];
+        
+        for(int i = 1; i<n; i++){
+            left[i] = Math.max(left[i-1] , arr[i]);
+        } 
+        
+        right[n-1] = arr[n-1];
+        for(int j = n-2; j>=0;j--){
+            right[j] = Math.max(right[j+1] , arr[j]);
+        }
+        
+        for(int k =1; k<n-1; k++){
+           int trapWater = Math.min(left[k] , right[k]);
+            ans += trapWater - arr[k];
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -256,6 +281,9 @@ public class Twopointer {
 
         String s = "geeksforgeeks";
         System.out.println(longestUniqueSubstr(s));
+
+        int arr7[] = {3, 0, 1, 0, 4, 0, 2};
+        System.out.println(maxWater(arr7));
 
     }
 }
