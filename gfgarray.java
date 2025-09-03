@@ -4,14 +4,14 @@ import java.util.List;
 
 public class gfgarray {
 
-    public static void printArray(int arr[]){
+    public static void printArray(int arr[]){  //funtion of print arrays
         for (int i=0;i<arr.length;i++){
             System.out.print(arr[i] + " ");
         }
     }
 
 
-    public static int missing(int arr[]){
+    public static int missing(int arr[]){             //finding missing element
         int n = arr.length+1;
         for(int i=1;i<n+1;i++){
             boolean found = false;
@@ -38,7 +38,7 @@ public class gfgarray {
 
     }
 
-    public static int getSecondLargest(int[] arr) {
+    public static int getSecondLargest(int[] arr) {            //find Second largest element
        
         int largest = 0;
         int secondlarge = 0;
