@@ -17,9 +17,9 @@ public class ran{
         return rev;
     }
     public static void main(String[] args) {
-        // int a =10;
-        // int b = 9;
-        // reverse(a, b);
+        int a =10;
+        int b = 9;
+        reverse(a, b);
         int num = 12356789;
         System.out.println(reversnum(num));
     }
