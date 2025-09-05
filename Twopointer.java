@@ -251,6 +251,24 @@ public class Twopointer {
         return ans;
     }
 
+     public static int maxWater1(int arr[]) {
+        // Code Here
+        int left = 0 , right = arr.length-1;;
+        int ans = 0;
+        
+        while(left < right){
+            int minWater = Math.min(arr[right] , arr[left]) * (right-left);
+            ans = Math.max(minWater ,ans);
+            
+            if(arr[left] < arr[right]){
+                left += 1;
+            }else{
+                right -= 1;
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -284,6 +302,9 @@ public class Twopointer {
 
         int arr7[] = {3, 0, 1, 0, 4, 0, 2};
         System.out.println(maxWater(arr7));
+
+        int arr8[] = {1, 5, 4, 3};
+        System.out.println(maxWater1(arr8));
 
     }
 }
