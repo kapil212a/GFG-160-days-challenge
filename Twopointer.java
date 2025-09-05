@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Twopointer {
     public static int countTriplets(int[] arr, int target) {
-        // Code Here
+        
         int n = arr.length;
         int res = 0;
         Arrays.sort(arr);
@@ -69,7 +69,7 @@ public class Twopointer {
     }
 
     public  static ArrayList<Integer> sumClosest(int[] arr, int target) {
-        // code here
+    
         int n = arr.length;
         Arrays.sort(arr);
         int left = 0;
@@ -227,7 +227,7 @@ public class Twopointer {
     }
 
     public static int maxWater(int arr[]) {
-        // code here
+        
         int n = arr.length;
         int left[] = new int[n];
         int right[] = new int[n];
@@ -269,6 +269,8 @@ public class Twopointer {
         return ans;
     }
 
+
+
     public static void main(String[] args) {
         int arr[] = {-3, -1, -1, 0, 1, 2};
         int target = -2;
@@ -305,6 +307,7 @@ public class Twopointer {
 
         int arr8[] = {1, 5, 4, 3};
         System.out.println(maxWater1(arr8));
+
 
     }
 }
