@@ -1,3 +1,4 @@
+import java.util.*;
 public class prefix_sum {
     public static int findEquilibrium(int arr[]) {
         
@@ -22,8 +23,34 @@ public class prefix_sum {
         return -1;
     }
 
+    public static int longestSubarray(int[] arr, int k) {
+        
+        int n = arr.length;
+        int sum = 0;
+        HashMap <Integer , Integer> mp = new HashMap<>();
+        int ans =0;
+        for(int i = 0; i<n; i++){
+            sum +=arr[i];
+           
+           if(sum == k){
+                ans = Math.max(ans , i+1);
+                
+            }
+            if(mp.containsKey(sum - k)){
+                int len = i - mp.get(sum - k);
+                ans = Math.max(ans , len);
+            }
+            mp.putIfAbsent(sum , i);
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-7, 1, 5, 2, -4, 3, 0};
         System.out.println(findEquilibrium(arr));
+
+        int arr1[] = {10, 5, 2, 7, 1, -10};
+        int k = 15;
+        System.out.println(longestSubarray(arr1, k));
     }
 }
