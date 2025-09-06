@@ -45,6 +45,29 @@ public class prefix_sum {
         return ans;
     }
 
+    public static int maxLen(int[] arr) {
+
+        HashMap<Integer , Integer> mp = new HashMap<>();
+        int sum = 0;
+        int ans = 0;
+        
+        for(int i = 0 ; i<arr.length; i++){
+            if(arr[i] == 0){
+                sum += -1;
+            }else{
+                sum += 1;
+            }
+            if(sum == 0){
+                ans = i+1;
+            }
+            if(mp.containsKey(sum)){
+                ans = Math.max(ans , i-mp.get(sum));
+            }else{
+                mp.put(sum , i);
+            }
+        }return ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = {-7, 1, 5, 2, -4, 3, 0};
         System.out.println(findEquilibrium(arr));
@@ -52,5 +75,8 @@ public class prefix_sum {
         int arr1[] = {10, 5, 2, 7, 1, -10};
         int k = 15;
         System.out.println(longestSubarray(arr1, k));
+
+        int arr2[] = {1, 0, 1, 1, 1, 0, 0};
+        System.out.println(maxLen(arr2));
     }
 }
