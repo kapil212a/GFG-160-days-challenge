@@ -55,7 +55,7 @@ public class gfgarray {
         }return secondlarge;
     }
 
-    public static void reverseArray(int arr[]){
+    public static void reverseArray(int arr[]){              //Reverse of Array
         int first = 0;
         int last = arr.length-1;
         while(first<last){
