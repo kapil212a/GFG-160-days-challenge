@@ -113,7 +113,7 @@ public class gfgarray {
         }
     }
 
-    public List<Integer> findMajority(int[] arr) {
+    public List<Integer> findMajority(int[] arr) {               //Find the majority Element
         int n = arr.length;
         int ele1 =-1;
         int ele2 = -1;
