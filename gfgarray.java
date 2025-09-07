@@ -80,7 +80,7 @@ public class gfgarray {
     }
     
 
-    public static void permutation(int arr[]){
+    public static void permutation(int arr[]){         //find the permutation
         int n = arr.length;
         int pivit = -1;
         for(int i = n-2;i>=0;i--){
@@ -102,7 +102,7 @@ public class gfgarray {
         reverse(arr,pivit+1,n-1);
     }
 
-    public static void circularArr(int arr[], int rotate){
+    public static void circularArr(int arr[], int rotate){  ///circular Array
         int n=arr.length;
         int temp[] = new int[n];
         for(int i=0; i<n;i++){
