@@ -163,7 +163,7 @@ public class gfgarray {
         return result;
     }
 
-    public static void pushZerosToEnd(int[] arr) {
+    public static void pushZerosToEnd(int[] arr) {              //Push All Zeroes TO End Of The Arr
         
         int n = arr.length;
         int push = 0;
