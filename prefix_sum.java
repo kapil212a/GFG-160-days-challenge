@@ -1,6 +1,6 @@
 import java.util.*;
 public class prefix_sum {
-    public static int findEquilibrium(int arr[]) {
+    public static int findEquilibrium(int arr[]) {                //find the equilibrium point of array
         
         int n = arr.length;
         int start[] = new int [n];
