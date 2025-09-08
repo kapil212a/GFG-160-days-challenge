@@ -23,7 +23,7 @@ public class prefix_sum {
         return -1;
     }
 
-    public static int longestSubarray(int[] arr, int k) {
+    public static int longestSubarray(int[] arr, int k) {        ///Longest subarraysum of arrys
         
         int n = arr.length;
         int sum = 0;
