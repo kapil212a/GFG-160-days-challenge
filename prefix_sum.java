@@ -68,7 +68,7 @@ public class prefix_sum {
         }return ans;
     }
 
-    public static int[] productExceptSelf(int arr[]) {
+    public static int[] productExceptSelf(int arr[]) {              //Find the product of element of array except self
         
         int n = arr.length;
         int ans[] = new int[n];
