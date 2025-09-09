@@ -45,7 +45,7 @@ public class prefix_sum {
         return ans;
     }
 
-    public static int maxLen(int[] arr) {
+    public static int maxLen(int[] arr) {              //Find the max Length in arr
 
         HashMap<Integer , Integer> mp = new HashMap<>();
         int sum = 0;
