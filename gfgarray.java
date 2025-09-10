@@ -199,7 +199,7 @@ public class gfgarray {
         return maxprofit;
     }
 
-    public static int getMinDiff(int[] arr, int k) {
+    public static int getMinDiff(int[] arr, int k) {           //find the minimum diffrence between kth position im arr
         
         Arrays.sort(arr);
         int n = arr.length;
