@@ -1,4 +1,7 @@
 //import org.w3c.dom.Node;
+
+import java.util.Stack;
+
 class Node {
     int data;
     Node next;
@@ -67,6 +70,37 @@ public  class linkList {
         return dummy.next;
     }
 
+    public static Node reverseKGroup(Node head, int k) {
+        
+        if(head == null && k == 1){
+            return head;
+        }
+        Stack <Node> st = new Stack<>();
+        Node temp = head;
+        Node prev = null;
+        
+        while(temp != null){
+            int count = 0;
+            while(temp != null && count < k){
+                st.push(temp);
+                temp = temp.next;
+                count++;
+            }
+            while(!st.isEmpty()){
+                if(prev == null){
+                    prev = st.pop();
+                    head = prev;
+                }else{
+                    prev.next = st.pop();
+                    prev = prev.next;
+                    
+                }
+            }
+        }
+        prev.next = null;
+        return head;
+}
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
@@ -98,6 +132,9 @@ public  class linkList {
 
         Node res = sortedMerge(head1, head2);
         printll(res);
+
+        head = reverseKGroup(head, 2);
+        printll(head);
 
     }
 }
