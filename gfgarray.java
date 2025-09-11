@@ -225,7 +225,7 @@ public class gfgarray {
         }return sum;
     }
 
-    public static int maxProduct(int[] arr) {
+    public static int maxProduct(int[] arr) {               //find the max profit in the given profit arrays
         
         int max = Integer.MIN_VALUE;
         int leftToright = 1;
