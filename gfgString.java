@@ -26,7 +26,7 @@ public class gfgString {
     }
 
     
-    static String removeZero(String s){
+    static String removeZero(String s){             //remove all zeroes
         int first = s.indexOf("1");
         return (first == -1) ? "0" : s.substring(first);
     }
