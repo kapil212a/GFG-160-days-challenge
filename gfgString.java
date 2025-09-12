@@ -30,7 +30,7 @@ public class gfgString {
         int first = s.indexOf("1");
         return (first == -1) ? "0" : s.substring(first);
     }
-    public static String addBinary(String s1, String s2) {
+    public static String addBinary(String s1, String s2) {     // Add Binary To string
         
         s1 = removeZero(s1);
         s2 = removeZero(s2);
