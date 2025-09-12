@@ -68,7 +68,7 @@ public class gfgString {
         return result.reverse().toString();
     }
 
-    public static boolean areAnagrams(String s1, String s2) {
+    public static boolean areAnagrams(String s1, String s2) {       //Check The String Is anagram or not
         
         char[] str1 = s1.toCharArray();
         char[] str2 = s2.toCharArray();
