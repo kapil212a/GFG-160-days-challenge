@@ -101,6 +101,48 @@ public  class linkList {
         return head;
 }
 
+    public static Node reverse(Node head){
+        Node temp = head , prev = null , next = null;
+        while(temp != null){
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        return prev;
+    }
+    
+    
+    public static Node addTwoLists(Node head1, Node head2) {
+        
+        head1 = reverse(head1);
+        head2 = reverse(head2);
+        
+        Node sum = null;
+        int carry = 0;
+        while(head1 != null || head2 != null || carry >0){
+            int newVal = carry;
+            if(head1 != null){
+                newVal += head1.data;
+                head1 = head1.next;
+            }
+            if(head2 != null){
+                newVal += head2.data;
+                head2 = head2.next;
+            }
+            carry = newVal/10;
+            newVal %= 10;
+            
+            Node newNode = new Node(newVal);
+            newNode.next = sum;
+            sum = newNode;
+        }
+        while(sum != null && sum.data == 0){
+            sum = sum.next;
+        }
+        return (sum == null) ? new Node(0) : sum;
+    }
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
@@ -135,6 +177,17 @@ public  class linkList {
 
         head = reverseKGroup(head, 2);
         printll(head);
+
+        Node num1 = new Node(1);
+        num1.next = new Node(2);
+        num1.next.next = new Node(3);
+
+        Node num2 = new Node(9);
+        num2.next = new Node(9);
+        num2.next.next = new Node(9);
+
+        Node sum = addTwoLists(num1, num2);
+        printll(sum);
 
     }
 }
