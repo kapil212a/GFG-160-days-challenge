@@ -10,7 +10,7 @@ public class BinarytreesB {
             this.right = null;
         }
     }
-    static class BinaryTree{
+    public static class BinaryTree{
         static int idx = -1;
         public static Node buildtree(int arr[]){
             idx++;
