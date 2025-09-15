@@ -167,6 +167,21 @@ public  class linkList {
         return mp.get(head);
     }
 
+    static void printList(Node head) {
+        while (head != null) {
+            System.out.print(head.data + "(");
+            if (head.random != null)
+                System.out.print(head.random.data + ")");
+            else 
+                System.out.print("null" + ")");
+        
+            if (head.next != null)
+                System.out.print(" -> ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
