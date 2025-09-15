@@ -1,5 +1,4 @@
-//import org.w3c.dom.Node;
-
+import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -7,10 +6,12 @@ import java.util.Stack;
 class Node {
     int data;
     Node next;
+    Node random;
 
     Node(int x) {
         data = x;
         next = null;
+        random = null;
     }
 }
 
@@ -228,21 +229,21 @@ public  class linkList {
         Node sum = addTwoLists(num1, num2);
         printll(sum);
 
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
-        head.random = head.next.next;
-        head.next.random = head;
-        head.next.next.random = head.next.next.next.next;
-        head.next.next.next.random = head.next.next;
-        head.next.next.next.next.random = head.next;
+        Node head3 = new Node(1);
+        head3.next = new Node(2);
+        head3.next.next = new Node(3);
+        head3.next.next.next = new Node(4);
+        head3.next.next.next.next = new Node(5);
+        head3.random = head3.next.next;
+        head3.next.random = head3;
+        head3.next.next.random = head3.next.next.next.next;
+        head3.next.next.next.random = head3.next.next;
+        head3.next.next.next.next.random = head3.next;
 
         System.out.println("Original linked list:");
-        printll(head);
+        printll(head3);
   
-        Node clonedList = cloneLinkedList(head);
+        Node clonedList = cloneLinkedList(head3);
   
         System.out.println("Cloned linked list:");
         printList(clonedList);
