@@ -1,5 +1,7 @@
 //import org.w3c.dom.Node;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 class Node {
@@ -143,6 +145,28 @@ public  class linkList {
         return (sum == null) ? new Node(0) : sum;
     }
 
+    public static Node cloneLinkedList(Node head) {
+        
+        Map<Node , Node> mp = new HashMap<>();
+        
+        Node curr = head;
+        while(curr != null){
+            mp.put(curr , new Node(curr.data));
+            curr = curr.next;
+        }
+        
+        curr = head;
+        
+        while(curr != null){
+            Node newNode = mp.get(curr);
+            newNode.next = mp.get(curr.next);
+            
+            newNode.random = mp.get(curr.random);
+            curr = curr.next;
+        }
+        return mp.get(head);
+    }
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
@@ -188,6 +212,25 @@ public  class linkList {
 
         Node sum = addTwoLists(num1, num2);
         printll(sum);
+
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        head.random = head.next.next;
+        head.next.random = head;
+        head.next.next.random = head.next.next.next.next;
+        head.next.next.next.random = head.next.next;
+        head.next.next.next.next.random = head.next;
+
+        System.out.println("Original linked list:");
+        printll(head);
+  
+        Node clonedList = cloneLinkedList(head);
+  
+        System.out.println("Cloned linked list:");
+        printList(clonedList);
 
     }
 }
