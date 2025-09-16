@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -183,6 +182,20 @@ public  class linkList {
         System.out.println();
     }
 
+    public static boolean detectLoop(Node head) {
+        Node slow = head , fast = head;
+        
+        while(slow != null && fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
@@ -247,6 +260,8 @@ public  class linkList {
   
         System.out.println("Cloned linked list:");
         printList(clonedList);
+
+        System.out.println(detectLoop(head1));
 
     }
 }
