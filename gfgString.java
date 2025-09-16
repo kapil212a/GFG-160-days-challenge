@@ -79,7 +79,7 @@ public class gfgString {
     }
 
     static int max = 26;
-    static char nonRepeatingChar(String s) {
+    static char nonRepeatingChar(String s) {                            //Non repeating Character
         
         int arr[] = new int[max];
         Arrays.fill(arr,-1);
