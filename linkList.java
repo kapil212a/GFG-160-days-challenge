@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Stack;
 
@@ -216,6 +217,22 @@ public  class linkList {
         return -1;
     }
 
+    public static void removeLoop(Node head) {
+        
+        Node prev = null;
+        HashSet <Node> st = new HashSet<>();
+        while(head != null){
+            if(!st.contains(head)){
+                st.add(head);
+                prev = head;
+                head = head.next;
+            }else{
+                prev.next = null;
+                break;
+            }
+        }
+    }
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
@@ -291,8 +308,10 @@ public  class linkList {
         head4.next.next.next.next.next = new Node(6);
 
         head4.next.next.next.next.next = head4.next;
-
         System.out.println(cycleStart(head4));
+
+        removeLoop(head4);
+        printll(head4);
 
     }
 }
