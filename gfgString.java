@@ -103,7 +103,7 @@ public class gfgString {
         return (idx==-1)?'$':s.charAt(arr[idx]);
     }
 
-    public static boolean isPalindrome(String s ,int i, int j){
+    public static boolean isPalindrome(String s ,int i, int j){      //Find the Palindrom Of Given String
         while(j>=i){
             if(s.charAt(i) != s.charAt(j)){
                 return false;
