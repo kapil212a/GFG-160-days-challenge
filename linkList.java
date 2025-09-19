@@ -196,6 +196,26 @@ public  class linkList {
         return false;
     }
 
+    public static int cycleStart(Node head) {
+        Node slow = head;
+        Node fast = head;
+        
+        while(fast != null && fast.next != null ){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
+                slow = head;
+            
+                while(slow != fast){
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow.data;
+            }
+        }
+        return -1;
+    }
+
     public static void printll(Node node){  
         while(node != null){
             System.out.print(node.data + "-->");
@@ -262,6 +282,17 @@ public  class linkList {
         printList(clonedList);
 
         System.out.println(detectLoop(head1));
+
+        Node head4 = new Node(1);
+        head4.next = new Node(2);
+        head4.next.next = new Node(3);
+        head4.next.next.next = new Node(4);
+        head4.next.next.next.next = new Node(5);
+        head4.next.next.next.next.next = new Node(6);
+
+        head4.next.next.next.next.next = head4.next;
+
+        System.out.println(cycleStart(head4));
 
     }
 }
