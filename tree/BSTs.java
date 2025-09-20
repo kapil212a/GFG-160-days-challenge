@@ -8,7 +8,7 @@ public class BSTs {
             this.data = data;
         }
     }
-    public static Node insert(Node root , int val){
+    public static Node insert(Node root , int val){                      ////Insertion In Binary Tree
         if(root == null){
             root = new Node(val);
             return root;
