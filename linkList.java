@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Stack;
 
-class Node {
+class Node {                              //Structure of Node
     int data;
     Node next;
     Node random;
@@ -17,7 +17,7 @@ class Node {
 
 
 public  class linkList {
-    static Node reverseList(Node head) {
+    static Node reverseList(Node head) {                            
         
         Node temp = head , prev = null , next;
         
