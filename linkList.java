@@ -32,7 +32,7 @@ public  class linkList {
         return prev;
     }
 
-    public static Node rotate(Node head, int k) {
+    public static Node rotate(Node head, int k) {                 //Rotate a linked list
         
         if(k==0 ||  head == null){
             return head;
