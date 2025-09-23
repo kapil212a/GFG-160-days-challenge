@@ -17,7 +17,7 @@ class Node {                              //Structure of Node
 
 
 public  class linkList {
-    static Node reverseList(Node head) {                            
+    static Node reverseList(Node head) {                             //Reverse a linkled list 
         
         Node temp = head , prev = null , next;
         
