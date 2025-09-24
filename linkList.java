@@ -104,7 +104,7 @@ public  class linkList {
         return head;
 }
 
-    public static Node reverse(Node head){
+    public static Node reverse(Node head){              //// reverse the linklist
         Node temp = head , prev = null , next = null;
         while(temp != null){
             next = temp.next;
