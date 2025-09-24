@@ -73,7 +73,7 @@ public  class linkList {
         return dummy.next;
     }
 
-    public static Node reverseKGroup(Node head, int k) {
+    public static Node reverseKGroup(Node head, int k) {              //reverse the group node
         
         if(head == null && k == 1){
             return head;
