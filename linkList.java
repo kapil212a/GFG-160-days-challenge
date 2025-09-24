@@ -50,7 +50,7 @@ public  class linkList {
         return head;
     }
 
-     public static Node sortedMerge(Node head1, Node head2) {
+     public static Node sortedMerge(Node head1, Node head2) {        ////merge sort
         
         Node dummy = new Node(-1);
         Node curr = dummy;
