@@ -168,7 +168,7 @@ public  class linkList {
         return mp.get(head);
     }
 
-    static void printList(Node head) {
+    static void printList(Node head) {                       //Print The Link List
         while (head != null) {
             System.out.print(head.data + "(");
             if (head.random != null)
