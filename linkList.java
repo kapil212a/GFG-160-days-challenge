@@ -146,7 +146,7 @@ public  class linkList {
         return (sum == null) ? new Node(0) : sum;
     }
 
-    public static Node cloneLinkedList(Node head) {
+    public static Node cloneLinkedList(Node head) {                  //Make The Clone of linklist
         
         Map<Node , Node> mp = new HashMap<>();
         
