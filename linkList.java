@@ -116,7 +116,7 @@ public  class linkList {
     }
     
     
-    public static Node addTwoLists(Node head1, Node head2) {
+    public static Node addTwoLists(Node head1, Node head2) {          // add two linkedList in One
         
         head1 = reverse(head1);
         head2 = reverse(head2);
