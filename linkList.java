@@ -217,7 +217,7 @@ public  class linkList {
         return -1;
     }
 
-    public static void removeLoop(Node head) {
+    public static void removeLoop(Node head) {              //Remove Loop
         
         Node prev = null;
         HashSet <Node> st = new HashSet<>();
