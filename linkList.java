@@ -183,7 +183,7 @@ public  class linkList {
         System.out.println();
     }
 
-    public static boolean detectLoop(Node head) {
+    public static boolean detectLoop(Node head) {              //Detect The Loop In  Linkedlist
         Node slow = head , fast = head;
         
         while(slow != null && fast != null && fast.next != null){
