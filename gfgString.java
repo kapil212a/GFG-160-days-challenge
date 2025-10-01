@@ -136,7 +136,7 @@ public class gfgString {
     }
     
     
-    public static void main(String args[]){
+    public static void main(String args[]){                   //main function
         // String s  = " -123";
         // System.out.println(myAtoi(s));
         // System.err.println(s);
