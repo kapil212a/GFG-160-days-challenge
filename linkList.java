@@ -241,7 +241,7 @@ public  class linkList {
         }
         System.out.println();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {           //main function
         Node head = new Node(1);
         head.next = new Node(2);
         head.next.next = new Node(3);
