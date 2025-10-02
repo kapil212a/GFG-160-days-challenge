@@ -288,7 +288,7 @@ public  class linkList {
         head3.next.random = head3;
         head3.next.next.random = head3.next.next.next.next;
         head3.next.next.next.random = head3.next.next;
-        head3.next.next.next.next.random = head3.next;
+        head3.next.next.next.next.random = head3.next;     //Loop Creation In LinkedList
 
         System.out.println("Original linked list:");
         printll(head3);
