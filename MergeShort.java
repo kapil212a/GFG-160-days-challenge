@@ -36,7 +36,7 @@ public class MergeShort {                                 //complexity will be (
             arr[i] = temp[k];
         }
     }
-    public static void mergeSort(int arr[] , int si, int ei){
+    public static void mergeSort(int arr[] , int si, int ei){  ///Merge Sort
         if(si>=ei){
             return;
         }
