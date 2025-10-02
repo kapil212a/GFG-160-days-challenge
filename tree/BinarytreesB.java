@@ -1,5 +1,5 @@
-package tree;
-public class BinarytreesB {
+package tree;                   
+public class BinarytreesB {           ///Structure of tree
     static class Node{
         int data;
         Node left;
