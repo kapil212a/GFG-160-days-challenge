@@ -68,7 +68,7 @@ public class Twopointer {
         return count;
     }
 
-    public  static ArrayList<Integer> sumClosest(int[] arr, int target) {
+    public  static ArrayList<Integer> sumClosest(int[] arr, int target) {     //Find the closest Sum in Array
     
         int n = arr.length;
         Arrays.sort(arr);
