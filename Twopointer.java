@@ -48,7 +48,7 @@ public class Twopointer {
         
     }
 
-    public static int countPairs(int arr[], int target) {
+    public static int countPairs(int arr[], int target) {          //count the pairs in Array
         
         Arrays.sort(arr);
         int n = arr.length;
