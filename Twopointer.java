@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class Twopointer {
-    public static int countTriplets(int[] arr, int target) {
+    public static int countTriplets(int[] arr, int target) {            //count triplets in given array
         
         int n = arr.length;
         int res = 0;
