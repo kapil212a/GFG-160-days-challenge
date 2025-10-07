@@ -60,7 +60,7 @@ public class Recursion {
                 return false;
             }
         }
-        for(int i = 0 ; i<9 ; i++){
+        for(int i = 0 ; i<9 ; i++){         // col match
             if(mat[i][col] == num){
                 return false;
             }
