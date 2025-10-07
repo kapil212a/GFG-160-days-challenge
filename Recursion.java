@@ -54,7 +54,7 @@ public class Recursion {
         
     }
 
-    public static boolean isSafe(int mat[][] , int row ,int col, int num){
+    public static boolean isSafe(int mat[][] , int row ,int col, int num){  //row match
         for(int i = 0 ; i<9 ; i++){
             if(mat[row][i] == num){
                 return false;
