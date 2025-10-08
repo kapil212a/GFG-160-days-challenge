@@ -98,7 +98,7 @@ public class Recursion {
         }
         return false;
     }
-    public static void solveSudoku(int[][] mat) {
+    public static void solveSudoku(int[][] mat) {                        // suoku solver
         
         solveSudokuOn(mat ,0,0);
     }
