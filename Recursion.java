@@ -77,8 +77,8 @@ public class Recursion {
         return true;
     }
     public static boolean solveSudokuOn(int mat[][] , int row , int col){
-        if(row == 8 && col == 9){
-            return true;
+        if(row == 8 && col == 9){                      //base condition
+            return true;   
         }
         if(col == 9){
             row++;
