@@ -1,7 +1,7 @@
 import java.util.*;
 public class sorting{
 
-    public static void printArr(int arr[]){
+    public static void printArr(int arr[]){                 //print the array
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i] + " ");
         }
