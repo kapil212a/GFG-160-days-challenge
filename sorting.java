@@ -11,7 +11,7 @@ public class sorting{
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    public static void sort012(int[] arr) {
+    public static void sort012(int[] arr) {                
         
         int start = 0;
         int mid = 0;
