@@ -14,7 +14,7 @@ public class tree {
     
     public static int height(Node root){
         if(root == null){
-            return -1;
+            return 0;
         }
         int lheight = height(root.left);
         int rheight = height(root.right);

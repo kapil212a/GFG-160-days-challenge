@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class gfgString {
-    public static int myAtoi(String s) {
+    public static int myAtoi(String s) {                     //Find Atoi of string
         int res =0;
         int sign =1;
         int indx=0;
